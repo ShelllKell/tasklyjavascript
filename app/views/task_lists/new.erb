@@ -1,0 +1,13 @@
+<%= form_for @task_list, url: task_lists_path, html: {class: "create"} do |f| %>
+  <div>
+    <%= f.label :name %>
+    <br>
+    <%= f.text_field :name, autofocus: true %>
+  </div>
+  <br>
+  <div>
+    <%= f.submit "Create Task List" %>
+  </div>
+  <br>
+<% end %>
+

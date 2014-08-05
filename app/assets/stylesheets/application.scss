@@ -84,3 +84,14 @@ main {
     font-size: 110%;
   }
 }
+
+.create {
+  input[type="submit"] {
+    background-color: lightskyblue;
+  }
+}
+
+.flash {
+  padding: 1em;
+  background-color: green;
+}
