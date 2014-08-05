@@ -1,0 +1,18 @@
+<h1>Edit a task list</h1>
+
+<%= form_for @task_list do |f| %>
+
+  <div>
+    <%= f.label :name %>
+    <br>
+    <%= f.text_field :name, render: :name %>
+  </div>
+  <br>
+  <div>
+    <%= f.submit "Edit Task List" %>
+  </div>
+  <br>
+<% end %>
+
+
+
