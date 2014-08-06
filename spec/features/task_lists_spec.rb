@@ -17,4 +17,10 @@ feature 'Task lists' do
     expect(page).to have_content("Household Chores")
   end
 
+  scenario 'user can add a task list' do
+    visit root_path
+    click_link "+ Add Task List"
+    expect(page).to have_content("Add a task list")
+  end
+
 end

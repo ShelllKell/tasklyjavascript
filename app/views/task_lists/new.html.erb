@@ -2,16 +2,21 @@
 
 <%= form_for @task_list, html: {class: "create"} do |f| %>
 
-        <% f.object.errors.messages.values.each do |error| %>
-    <div class="errors">
-          <%= error.first %>
-        <% end %>
-    </div>
 
+  <% if @task_list.errors.any? %>
+    <div class="errors">
+      <ul>
+        <% @task_list.errors.full_messages.each do |message| %>
+          <%= message %>
+          </ul>
+          </div>
+        <% end %>
+
+  <% end %>
 
   <div class="container">
     <%= f.label :name %>
-    <br>
+   <br>
     <%= f.text_field :name, autofocus: true %>
   </div>
 

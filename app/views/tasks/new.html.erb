@@ -1,0 +1,28 @@
+<h1>Add a task</h1>
+
+
+<%= form_for @task, html: {class: "create"} do |f| %>
+
+  <% if @task.errors.any? %>
+    <div class="errors">
+      <ul>
+        <% @task.errors.full_messages.each do |message| %>
+          <%= message %>
+          </ul>
+          </div>
+        <% end %>
+
+  <% end %>
+
+
+<div class="container">
+  <%= f.label :description %>
+  <br>
+  <%= f.text_field :task, autofocus: true %>
+</div>
+
+<div class="container">
+    <%= f.submit "Create Task" %>
+</div>
+
+<% end %>
