@@ -1,5 +1,7 @@
 class Task < ActiveRecord::Base
 
-  validates :task, :presence => true
+  belongs_to :task_list
+
+  validates :task, presence:{:message => "Your task could not be created"}
 
 end
