@@ -3,8 +3,9 @@
 <%= form_for @task_list, html: {class: "create"} do |f| %>
 
 
-  <% if @task_list.errors.any? %>
+
     <div class="errors">
+      <% if @task_list.errors.any? %>
       <ul>
         <% @task_list.errors.full_messages.each do |message| %>
           <%= message %>
