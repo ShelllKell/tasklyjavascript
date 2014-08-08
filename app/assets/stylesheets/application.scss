@@ -110,17 +110,3 @@ main {
 .container .description {
   color: red;
 }
-
-.delete_link {
-  display: inline;
-  margin-left: 1em;
-  input[type="submit"] {
-    color: blue;
-    text-decoration: underline;
-    background: transparent;
-    border: none;
-    &:visited {
-      color: indigo;
-    }
-  }
-}

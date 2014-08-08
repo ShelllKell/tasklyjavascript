@@ -17,8 +17,9 @@
     <%= link_to "Edit", "/task_lists/#{task_list.id}/edit" %>
     <%= link_to "+ Add Task", "/task_lists/#{task_list.id}/tasks/new" %>
     <% task_list.tasks.each do |task| %>
-    <p><%= task.task %></p>
-      <%= button_to "Delete", "/task_lists/#{task_list.id}/tasks/#{task.id}",  method: :delete, html: {class: "delete_link"} %>
+      <p><%= task.task %> (<%= distance_of_time_in_words(task.due_date, Time.now) %>)</p>
+
+      <%= button_to "Delete", "/task_lists/#{task_list.id}/tasks/#{task.id}", method: :delete, html: {class: "delete_link"} %>
     <% end %>
 
   </section>

@@ -15,6 +15,7 @@ class TaskListsController < ApplicationController
   def create
     @task_list = TaskList.new(:name => params[:task_list][:name])
 
+
     if  @task_list.save
       flash[:notice] = "Task list was created successfully!"
       redirect_to "/"
