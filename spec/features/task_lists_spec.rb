@@ -18,6 +18,16 @@ feature 'Task lists' do
   end
 
   scenario 'user can add a task list' do
+    user = create_user
+    TaskList.create!(name: "Work List")
+    TaskList.create!(name: "Household Chores")
+
+    visit signin_path
+    click_on "Login"
+    fill_in "Email", with: user.email
+    fill_in "Password", with: "password"
+    click_on "Login"
+
     visit root_path
     click_link "+ Add Task List"
     expect(page).to have_content("Add a task list")

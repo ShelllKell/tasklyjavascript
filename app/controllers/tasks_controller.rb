@@ -5,12 +5,14 @@ class TasksController < ApplicationController
     @task_list = TaskList.find(params[:task_list_id])
   end
 
+  def show
+    @task = Task.new.find(params[:task_list_id])
+  end
+
   def create
     @task = Task.new(allowed_parameters)
     @task_list = TaskList.find(params[:task_list_id])
     @task.task_list = @task_list
-
-    # @due_date = params[:due_date]
 
     if @task.save
       flash[:notice] = "Task was created successfully!"
@@ -18,6 +20,14 @@ class TasksController < ApplicationController
     else
       render :new
     end
+  end
+
+  def update
+    @task = Task.find(params[:id])
+    @task.update(
+      complete?: true
+    )
+    redirect "/"
   end
 
   def destroy

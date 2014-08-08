@@ -1,3 +1,9 @@
 <h1><%= @task_list.name %></h1>
 
-<p><%= @task %></p>
+
+<dt>Tasks:</dt>
+
+<% @task_list.tasks.each do |task| %>
+  <p><%= task.task %></p>
+  <div class="right"><%= button_to "Delete", "/task_lists/#{@task_list.id}/tasks/#{task.id}", method: :delete, html: {class: "delete_link"} %></div>
+<% end %>
