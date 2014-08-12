@@ -101,12 +101,10 @@ main {
   display: inline;
 }
 
-
 .error {
   display: inline;
   color: red
 }
-
 
 .container .description {
   color: red;
@@ -115,16 +113,12 @@ main {
 .right {
   display: inline;
   float: right;
-
-
 }
 
-.left {
-
-  display: inline;
-
+div.tasks {
+  visibility: hidden;
 }
 
-.button_to {
-
+div.open {
+  visibility: visible;
 }
