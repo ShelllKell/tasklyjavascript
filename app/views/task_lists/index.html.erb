@@ -13,15 +13,16 @@
 
   <section class="task-list">
 
-    <button class="button">Toggle</button>
+    <button class="button">Open</button>
     <div class="left"><h1><%= link_to "#{task_list.name}", "/task_lists/#{task_list.id}" %></h1></div>
     <div class="right"><%= link_to "Edit", "/task_lists/#{task_list.id}/edit" %>
       <%= link_to "+ Add Task", "/task_lists/#{task_list.id}/tasks/new" %></div>
 
+    <ul style="display: none;">
     <% task_list.tasks.each do |task| %>
       <div class="tasks"><%= task.task %> (<%= distance_of_time_in_words(task.due_date, Time.now) %>)</div>
     <% end %>
-
+    </ul>
   </section>
 
 <% end %>
