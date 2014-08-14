@@ -38,7 +38,8 @@ class TasksController < ApplicationController
 
 private
   def allowed_parameters
-    params.require(:task).permit(:task, :task_list_id, :due_date)
+    due_date = Date.parse(params[:task][:due_date])
+    params.require(:task).permit(:task, :task_list_id, due_date)
   end
 
 

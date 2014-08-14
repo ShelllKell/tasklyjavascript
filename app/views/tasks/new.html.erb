@@ -4,8 +4,8 @@
 <%= form_for @task, html: {class: "create"} do |f| %>
 
 
-    <div class="errors">
-      <% if @task.errors.any? %>
+  <div class="errors">
+    <% if @task.errors.any? %>
       <ul>
         <% @task.errors.full_messages.each do |message| %>
           <%= message %>
@@ -14,22 +14,22 @@
           </div>
         <% end %>
 
-  <% end %>
+    <% end %>
 
 
-<div class="container">
-  <%= f.label :description %>
-  <br>
-  <%= f.text_field :task, autofocus: true %>
-</div>
+    <div class="container">
+      <%= f.label :description %>
+      <br>
+      <%= f.text_field :task, autofocus: true %>
+    </div>
 
- <div class="container">
-   <%= f.label :due_date %>
-   <%= f.date_select :due_date %>
- </div>
+    <div class="container">
 
-<div class="container">
-    <%= f.submit "Create Task" %>
-</div>
+      Date: <%= f.text_field :due_date %>
+    </div>
+
+    <div class="container">
+      <%= f.submit "Create Task" %>
+    </div>
 
 <% end %>

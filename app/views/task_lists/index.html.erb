@@ -5,15 +5,15 @@
 <div class="flash">
   <% if flash[:notice] %>
     <%= flash[:notice] %>
+    <button class="flash-button">X</button>
   <% end %>
 </div>
-
 
 <% @task_lists.each do |task_list| %>
 
   <section class="task-list">
 
-    <button class="button">Open</button>
+    <button data-text-swap="Close">Open</button>
     <div class="left"><h1><%= link_to "#{task_list.name}", "/task_lists/#{task_list.id}" %></h1></div>
     <div class="right"><%= link_to "Edit", "/task_lists/#{task_list.id}/edit" %>
       <%= link_to "+ Add Task", "/task_lists/#{task_list.id}/tasks/new" %></div>
